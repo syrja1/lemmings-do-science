@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Lemmings" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <link rel="icon" href="./icon-192.png" />
+    <title>Lemmings Do Science</title>
+    <script type="module" crossorigin src="./assets/index-CswMPYbk.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bu71Gaa-.css">
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="view"></canvas>
+      <div id="topbar">
+        <button class="btn" id="btn-menu" aria-label="Valikko">☰</button>
+        <span id="level-name"></span>
+        <span id="stat-out">Ulkona 0</span>
+        <span id="stat-saved">Pelastettu 0</span>
+        <span id="stat-time">5:00</span>
+        <span id="stat-tilt" hidden></span>
+        <span class="spacer"></span>
+        <button class="btn on" id="btn-sound" aria-label="Äänet">🔊</button>
+        <button class="btn on" id="btn-fx" aria-label="Valotehosteet">✨</button>
+        <button class="btn" id="btn-camera" aria-label="Kamerakulma">🎥</button>
+        <button class="btn" id="btn-zoom-out">−</button>
+        <button class="btn" id="btn-zoom-in">+</button>
+        <button class="btn" id="btn-pause">⏸</button>
+        <button class="btn" id="btn-fast">⏩</button>
+        <button class="btn" id="btn-restart">↻</button>
+      </div>
+      <div id="skillbar"></div>
+      <div id="cursor"></div>
+      <div id="toast" hidden><b id="toast-title"></b><span id="toast-text"></span></div>
+      <div id="overlay" hidden>
+        <h1 id="overlay-title"></h1>
+        <p id="overlay-text"></p>
+        <div class="row">
+          <button class="btn big" id="overlay-next">Seuraava kenttä</button>
+          <button class="btn big" id="overlay-btn">Yritä uudelleen</button>
+          <button class="btn big" id="overlay-menu">Valikko</button>
+        </div>
+      </div>
+      <div id="menu">
+        <div class="menu-card">
+          <h1>Lemmings Do Science</h1>
+          <p class="sub">Valitse kenttä</p>
+          <div id="level-list"></div>
+          <p class="foot">Valitse tehtävä alapalkista ja napauta lemmingiä. Näkymää liikutetaan raahaamalla (PS5: oikea sauva), zoomaus − / +.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
