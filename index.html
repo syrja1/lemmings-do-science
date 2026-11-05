@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Lemmings" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <link rel="icon" href="./icon-192.png" />
+    <title>Lemmings Do Science</title>
+    <script type="module" crossorigin src="./assets/index-B3FcdU9J.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CYJUs-82.css">
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="view"></canvas>
+      <!-- in play only a small menu button shows at the top; everything else is in its menu and the info dialog -->
+      <div id="topbar">
+        <span class="need" id="need-left" title="Pelastettavia jäljellä" aria-label="Pelastettavia jäljellä">0</span>
+        <button class="btn ghost" id="btn-fast" aria-label="Pikakelaus">⏩</button>
+        <button class="btn ghost nuke" id="btn-nuke" aria-label="Räjäytä kaikki (pidä pohjassa 2 sekuntia)"><span>💥</span></button>
+        <button class="btn ghost" id="btn-game-menu" aria-label="Valikko" aria-haspopup="menu" aria-expanded="false">☰</button>
+      </div>
+      <div id="game-menu" role="menu" hidden>
+        <button class="mi" role="menuitem" id="btn-info"><span class="i">ℹ️</span><span class="l">Kentän tiedot</span></button>
+        <button class="mi" role="menuitem" id="btn-pause"><span class="i">⏸</span><span class="l">Tauko</span></button>
+        <button class="mi" role="menuitem" id="btn-zoom-in"><span class="i">＋</span><span class="l">Lähennä</span></button>
+        <button class="mi" role="menuitem" id="btn-zoom-out"><span class="i">−</span><span class="l">Loitonna</span></button>
+        <button class="mi" role="menuitem" id="btn-camera"><span class="i">🎥</span><span class="l">Kamerakulma</span></button>
+        <button class="mi on" role="menuitem" id="btn-sound"><span class="i">🔊</span><span class="l">Äänet</span></button>
+        <button class="mi on" role="menuitem" id="btn-fx"><span class="i">✨</span><span class="l">Valotehosteet</span></button>
+        <button class="mi" role="menuitem" id="btn-perf"><span class="i">📈</span><span class="l">FPS-näyttö pois</span></button>
+        <button class="mi" role="menuitem" id="btn-restart"><span class="i">↻</span><span class="l">Aloita alusta</span></button>
+        <button class="mi exit" role="menuitem" id="btn-menu"><span class="i">🚪</span><span class="l">Poistu kentältä</span></button>
+      </div>
+      <div class="dialog" id="info-dialog" hidden>
+        <div class="panel">
+          <h2 id="level-name"></h2>
+          <p id="level-hint"></p>
+          <dl class="stats">
+            <dt>Ulkona</dt><dd id="stat-out">0</dd>
+            <dt>Pelastettu</dt><dd id="stat-saved">0</dd>
+            <dt>Aikaa jäljellä</dt><dd id="stat-time">5:00</dd>
+            <dt>Kallistus</dt><dd id="stat-tilt">0°</dd>
+          </dl>
+          <div class="row"><button class="btn big" id="info-close">Sulje</button></div>
+        </div>
+      </div>
+      <div class="dialog" id="exit-dialog" hidden>
+        <div class="panel">
+          <h2>Poistu kentältä?</h2>
+          <p>Kenttä keskeytyy ja palaat aloitusruutuun.</p>
+          <div class="row">
+            <button class="btn big" id="exit-cancel">Peruuta</button>
+            <button class="btn big danger" id="exit-ok">Poistu</button>
+          </div>
+        </div>
+      </div>
+      <div id="skillbar"></div>
+      <div id="cursor"></div>
+      <div id="toast" hidden><b id="toast-title"></b><span id="toast-text"></span></div>
+      <div id="overlay" hidden>
+        <h1 id="overlay-title"></h1>
+        <p id="overlay-text"></p>
+        <div class="row">
+          <button class="btn big" id="overlay-next">Seuraava kenttä</button>
+          <button class="btn big" id="overlay-btn">Yritä uudelleen</button>
+          <button class="btn big" id="overlay-menu">Valikko</button>
+        </div>
+      </div>
+      <div id="menu">
+        <div class="menu-scroll"><div class="menu-card">
+          <h1>Lemmings Do Science</h1>
+          <p class="sub">Valitse kenttä</p>
+          <div id="level-list"></div>
+          <p class="foot">Valitse tehtävä alapalkista ja napauta lemmingiä. Näkymää liikutetaan raahaamalla (PS5: oikea sauva), zoomaus − / +.</p>
+        </div></div>
+      </div>
+    </div>
+  </body>
+</html>
